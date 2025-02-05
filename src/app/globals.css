@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #f2f2f2;
+  --background: #ffffff;
   --foreground: #171717;
+}
+
+*:focus-visible {
+  outline: none;
 }
 
 body {
@@ -12,4 +16,26 @@ body {
   background: var(--background);
   font-family: var(--font-vazir), Arial, sans-serif;
   direction: rtl;
+}
+
+.reverse {
+  @apply -scale-x-100;
+}
+
+.overlay {
+  @apply bg-stone-700 opacity-50;
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+  opacity: 0.8;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    @apply bg-stone-200 text-stone-200;
+  }
+  100% {
+    @apply bg-stone-300 text-stone-300;
+  }
 }

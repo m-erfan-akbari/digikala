@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "./components/provider/AuthProvider";
 
 const vazir = Vazirmatn({
   variable: "--font-vazir",
-  subsets: ["arabic"],
+  subsets: ["arabic", "latin"],
 });
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({
         className={`${vazir.variable} antialiased`}
         suppressHydrationWarning
       >
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

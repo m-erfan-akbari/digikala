@@ -1,0 +1,9 @@
+.animated {
+  animation: transform-down 0.75s ease-in-out;
+}
+
+@keyframes transform-down {
+  0% {
+    @apply -top-10;
+  }
+}
