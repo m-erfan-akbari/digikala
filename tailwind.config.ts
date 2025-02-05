@@ -16,6 +16,13 @@ export default {
         vazir: ["var(--font-vazir)"],
       },
     },
+    container: {
+      center: true,
+      padding: "1rem",
+      screens: {
+        xl: "1680px",
+      },
+    },
   },
   plugins: [],
 } satisfies Config;
