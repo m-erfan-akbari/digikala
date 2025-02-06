@@ -33,7 +33,7 @@ export default function NavigationMenu({
   className,
   ...props
 }: HTMLProps<HTMLElement>) {
-  const [hover, setHover] = useState<IdType>("categories-nav");
+  const [hover, setHover] = useState<IdType>(null);
   const [underlinePosition, setUnderlindePosition] =
     useState<UnderlinePositionType>({
       top: "110px",

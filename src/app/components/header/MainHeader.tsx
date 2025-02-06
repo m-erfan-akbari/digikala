@@ -1,4 +1,4 @@
-import HorizontalLogo from "../ui/HorizontalLogo";
+import { HorizontalLogo } from "../ui/Logo";
 import dynamic from "next/dynamic";
 import { HeaderButtonsPlaceholder } from "./HeaderButtons";
 import { SearchbarPlaceholder } from "./Searchbar";
@@ -24,9 +24,9 @@ export default function MainHeader() {
   return (
     <header className="sticky top-0">
       <div className="bg-white">
-        <div className="container flex justify-between py-3">
-          <div className="flex items-center gap-6">
-            <HorizontalLogo />
+        <div className="container flex justify-between gap-2 py-3">
+          <div className="flex grow items-center gap-6">
+            <HorizontalLogo className="hidden lg:block" />
             <DynamicSearchbar />
           </div>
 

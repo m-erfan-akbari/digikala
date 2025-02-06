@@ -1,7 +1,7 @@
 "use client";
 
 import classes from "./HeaderNavigation.module.css";
-import { MapPin, Menu } from "lucide-react";
+import { MapPin, Menu, Smartphone } from "lucide-react";
 import NavigationMenu from "../ui/NavigationMenu";
 import Link from "next/link";
 import useScroll from "@/hooks/useScroll";
@@ -22,7 +22,7 @@ export default function HeaderNavigation() {
         )}
       >
         <div className="container relative flex items-center justify-between">
-          <NavigationMenu className="text-sm">
+          <NavigationMenu className="hidden text-sm lg:block">
             <NavigationMenu.Trigger
               id="categories-nav"
               className="flex items-center gap-2 pr-0 text-base text-stone-800"
@@ -53,6 +53,20 @@ export default function HeaderNavigation() {
               </NavigationMenu.Trigger>
             ))}
 
+            <NavigationMenu.Trigger
+              id="secondhand-nav"
+              className="hidden items-center xl:flex"
+            >
+              <Link
+                href="https://www.digikala.com/landing/used/?utm_source=DKHEADER&utm_medium=HEADERBTM&utm_campaign=DKHEADER-USED&utm_id=DK-HEADER-USEDLANDING"
+                target="_blank"
+                className="flex items-center gap-1 text-stone-500"
+              >
+                <Smartphone className="h-4 w-4" />
+                <span>خرید کالای کارکرده</span>
+              </Link>
+            </NavigationMenu.Trigger>
+
             <span className="my-2 flex w-[2px] items-center rounded-full bg-stone-200" />
 
             <NavigationMenu.Trigger id="faq-nav" className="flex items-center">
@@ -76,7 +90,7 @@ export default function HeaderNavigation() {
             </NavigationMenu.Trigger>
           </NavigationMenu>
 
-          <div className="flex items-center gap-2 text-sm text-stone-700">
+          <div className="flex items-center gap-2 py-2 text-sm text-stone-700">
             <MapPin className="h-4 w-4" />
             <span>ارسال به تهران، تهران</span>
           </div>

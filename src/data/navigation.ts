@@ -2,11 +2,21 @@ import {
   BriefcaseBusiness,
   CirclePercent,
   Flame,
+  LucideProps,
   ShoppingBasket,
-  Smartphone,
 } from "lucide-react";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
 
-export const navigationItems = [
+export type NavigationItem = {
+  id: string;
+  href: string;
+  title: string;
+  icon: ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
+  >;
+};
+
+export const navigationItems: NavigationItem[] = [
   {
     id: "wonderful-nav",
     title: "شگفت‌انگیزها",
@@ -30,11 +40,5 @@ export const navigationItems = [
     title: "پرفروش‌ترین‌ها",
     icon: Flame,
     href: "https://www.digikala.com/best-selling/",
-  },
-  {
-    id: "secondhand-nav",
-    title: "خرید کالای کارکرده",
-    icon: Smartphone,
-    href: "https://www.digikala.com/landing/used/?utm_source=DKHEADER&utm_medium=HEADERBTM&utm_campaign=DKHEADER-USED&utm_id=DK-HEADER-USEDLANDING",
   },
 ];

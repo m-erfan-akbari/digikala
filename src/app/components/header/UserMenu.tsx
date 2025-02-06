@@ -21,7 +21,7 @@ export default function UserMenu({
   return (
     <DropdownMenu>
       <DropdownMenu.Trigger id={user.id} className="flex items-center gap-2">
-        <User className="h-7 w-7 text-stone-900" />
+        <User className="h-6 w-6 text-stone-900" />
         <ChevronDown className="h-4 w-4 text-stone-700" />
       </DropdownMenu.Trigger>
 
