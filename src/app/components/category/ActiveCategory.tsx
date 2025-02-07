@@ -9,7 +9,7 @@ export default function ActiveCategory({ item }: { item: CategoryItemType }) {
   return (
     <div className="overflow-y-auto p-4" dir="ltr">
       <div dir="rtl">
-        <h3 className="flex items-center gap-1 font-bold text-cyan-600">
+        <h3 className="flex items-center gap-1 font-bold text-cyan-500">
           <span>همه محصولات {item.title}</span>
           <ChevronLeft className="h-3 w-3" />
         </h3>
