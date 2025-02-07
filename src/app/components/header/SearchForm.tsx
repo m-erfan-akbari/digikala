@@ -1,12 +1,16 @@
 import { useLocalStorageState } from "@/hooks/useLocalStorageState";
 import { Clock, Flame } from "lucide-react";
 
-import { FormEvent, ReactNode } from "react";
+import { FormEvent, HTMLProps } from "react";
 import SearchSection from "./SearchSection";
 import { useRouter } from "next/navigation";
 import { mostPopularSearches } from "@/data/input";
 
-export default function SearchForm({ children }: { children: ReactNode }) {
+export default function SearchForm({
+  children,
+  onSubmit,
+  ...props
+}: HTMLProps<HTMLFormElement>) {
   const [recentSearches, setRecentSearches] = useLocalStorageState<string[]>(
     [],
     "recent-searches",
@@ -37,7 +41,13 @@ export default function SearchForm({ children }: { children: ReactNode }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={(e) => {
+        onSubmit?.(e);
+        handleSubmit(e);
+      }}
+      {...props}
+    >
       {children}
 
       {recentSearches.length > 0 ? (
