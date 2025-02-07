@@ -8,6 +8,7 @@ import useScroll from "@/hooks/useScroll";
 import { cn } from "@/lib/utils";
 import { navigationItems } from "@/data/navigation";
 import CategoryMenu from "../category/CategoryMenu";
+import BottomNavigation from "./BottomNavigation";
 
 export default function HeaderNavigation() {
   const { scrollDirection } = useScroll();
@@ -89,6 +90,8 @@ export default function HeaderNavigation() {
               </Link>
             </NavigationMenu.Trigger>
           </NavigationMenu>
+
+          <BottomNavigation />
 
           <div className="flex items-center gap-2 py-2 text-sm text-stone-700">
             <MapPin className="h-4 w-4" />
