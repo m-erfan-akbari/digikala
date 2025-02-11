@@ -68,61 +68,59 @@ export default function Slider({ slides }: { slides: sliderType[] }) {
   }, [startInterval]);
 
   return (
-    <section>
-      <div
-        className={cn(
-          "relative flex h-96 w-screen overflow-x-hidden",
-          classes.container,
-        )}
-      >
-        {slides.map((image, index) => (
-          <div
-            key={index}
-            className="absolute bottom-0 top-0 w-full transition-all duration-500 ease-in-out"
-            style={{
-              left: `${(slideIndex - index) * 100}%`,
-            }}
-          >
-            <Image
-              src={image.image}
-              alt={`تصویر ${image.alt}`}
-              fill
-              className="object-cover"
-            />
-          </div>
-        ))}
-
-        <div className="absolute bottom-4 left-1/2 flex w-full -translate-x-1/2 justify-center gap-1 transition-all duration-500">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => navigateToSlide(index)}
-              className={cn(
-                "relative h-2 w-2 origin-left overflow-hidden rounded-full bg-stone-700/80",
-                index === slideIndex && "w-5",
-              )}
-            >
-              <span
-                className={cn(
-                  "absolute bottom-0 left-0 right-[100%] top-0 transition-all duration-150",
-                  index === slideIndex && "right-0 bg-stone-200",
-                )}
-              />
-            </button>
-          ))}
-        </div>
-
-        <button className={cn("slider-side-btn", "left-6")} onClick={nextSlide}>
-          <ChevronLeft />
-        </button>
-
-        <button
-          className={cn("slider-side-btn", "right-6")}
-          onClick={previousSlide}
+    <section
+      className={cn(
+        "relative flex h-96 w-screen overflow-x-hidden",
+        classes.container,
+      )}
+    >
+      {slides.map((image, index) => (
+        <div
+          key={index}
+          className="absolute bottom-0 top-0 w-full transition-all duration-500 ease-in-out"
+          style={{
+            left: `${(slideIndex - index) * 100}%`,
+          }}
         >
-          <ChevronRight />
-        </button>
+          <Image
+            src={image.image}
+            alt={`تصویر ${image.alt}`}
+            fill
+            className="object-cover"
+          />
+        </div>
+      ))}
+
+      <div className="absolute bottom-4 left-1/2 flex w-full -translate-x-1/2 justify-center gap-1 transition-all duration-500">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => navigateToSlide(index)}
+            className={cn(
+              "relative h-2 w-2 origin-left overflow-hidden rounded-full bg-stone-700/80",
+              index === slideIndex && "w-5",
+            )}
+          >
+            <span
+              className={cn(
+                "absolute bottom-0 left-0 right-[100%] top-0 transition-all duration-150",
+                index === slideIndex && "right-0 bg-stone-200",
+              )}
+            />
+          </button>
+        ))}
       </div>
+
+      <button className={cn("slider-side-btn", "left-6")} onClick={nextSlide}>
+        <ChevronLeft />
+      </button>
+
+      <button
+        className={cn("slider-side-btn", "right-6")}
+        onClick={previousSlide}
+      >
+        <ChevronRight />
+      </button>
     </section>
   );
 }
