@@ -1,5 +1,5 @@
 import React from "react";
-import MainHeader from "../components/header/MainHeader";
+import MainHeader from "../../components/header/MainHeader";
 
 type PropsType = {
   children: React.ReactNode;

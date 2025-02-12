@@ -1,4 +1,4 @@
-import { sliderType } from "@/app/components/ui/Slider";
+import { sliderType } from "@/components/ui/Slider";
 
 export const sampleSlides: sliderType[] = [
   {

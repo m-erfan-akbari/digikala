@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
-import { AuthProvider } from "./components/provider/AuthProvider";
+import { AuthProvider } from "../components/provider/AuthProvider";
 
 const vazir = Vazirmatn({
   variable: "--font-vazir",

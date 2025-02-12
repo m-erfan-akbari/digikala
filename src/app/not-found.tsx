@@ -1,5 +1,5 @@
 import Image from "next/image";
-import MainHeader from "./components/header/MainHeader";
+import MainHeader from "../components/header/MainHeader";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 

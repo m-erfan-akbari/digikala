@@ -7,7 +7,7 @@ import Link from "next/link";
 import useScroll from "@/hooks/useScroll";
 import { cn } from "@/lib/utils";
 import { navigationItems } from "@/data/navigation";
-import CategoryMenu from "../category/CategoryMenu";
+import CategoryMenu from "@/features/category/CategoryMenu";
 import BottomNavigation from "./BottomNavigation";
 
 export default function HeaderNavigation() {
