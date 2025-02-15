@@ -7,7 +7,7 @@ export default function ActiveCategoryColumn({
   column: CategoryColumnType[];
 }) {
   return (
-    <div className="">
+    <div>
       {column.map((col, index) => (
         <div key={index} className="my-4">
           <h6 className="my-2 flex items-center gap-1 border-r-2 border-r-red-600 px-2 font-bold text-stone-800 hover:text-red-600">
