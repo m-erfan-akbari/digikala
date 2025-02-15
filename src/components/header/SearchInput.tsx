@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Search } from "lucide-react";
-import { HTMLProps, useContext, useState } from "react";
+import { HTMLProps, useState } from "react";
 import { TyppographyLogo } from "../ui/Logo";
 
 type SearchInputType = HTMLProps<HTMLInputElement> & {
