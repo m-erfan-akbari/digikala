@@ -11,7 +11,7 @@ import {
 import Overlay from "./Overlay";
 import { cn } from "@/lib/utils";
 import { useClickOutside } from "@/hooks/useClickOutside";
-import { X } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 
 type IdType = string | null;
 
@@ -145,7 +145,10 @@ function CloseButton() {
 function BackButton() {
   const { handleChange } = useContext(ModalContext);
   return (
-    <X className="h-5 w-5 cursor-pointer" onClick={() => handleChange()} />
+    <ArrowRight
+      className="h-5 w-5 cursor-pointer justify-self-start"
+      onClick={() => handleChange()}
+    />
   );
 }
 
