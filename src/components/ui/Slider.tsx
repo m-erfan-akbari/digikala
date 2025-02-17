@@ -86,6 +86,7 @@ export default function Slider({ slides }: { slides: sliderType[] }) {
             src={image.image}
             alt={`تصویر ${image.alt}`}
             fill
+            unoptimized
             className="object-cover"
           />
         </div>
