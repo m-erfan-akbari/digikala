@@ -70,7 +70,7 @@ export default function Slider({ slides }: { slides: sliderType[] }) {
   return (
     <section
       className={cn(
-        "relative flex h-96 w-screen overflow-x-hidden",
+        "relative flex h-96 w-full overflow-x-hidden",
         classes.container,
       )}
     >
