@@ -91,7 +91,10 @@ function Container({
     >
       <div
         ref={ref}
-        className={cn("rounded-2xl bg-white shadow drop-shadow-md", className)}
+        className={cn(
+          "flex flex-col rounded-2xl bg-white shadow drop-shadow-md",
+          className,
+        )}
         {...props}
       >
         {children}
