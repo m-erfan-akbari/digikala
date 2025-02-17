@@ -5,6 +5,7 @@ import Drawer from "../ui/Drawer";
 import { useState } from "react";
 import SearchForm from "./SearchForm";
 import SearchbarContainer from "./SearchbarContainer";
+import Overlay from "../ui/Overlay";
 
 export default function Searchbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ export default function Searchbar() {
         </div>
         {isOpen ? (
           <div className="hidden lg:block">
-            <div className="overlay fixed bottom-0 left-0 right-0 top-[118px]" />
+            <Overlay className="top-[118px]" />
             <div
               ref={ref}
               className="absolute left-0 right-0 top-0 rounded-lg border bg-white p-4 pt-3 shadow-md"

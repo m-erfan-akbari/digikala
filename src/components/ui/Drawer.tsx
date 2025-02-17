@@ -11,6 +11,7 @@ import {
   useState,
 } from "react";
 import { createPortal } from "react-dom";
+import Overlay from "./Overlay";
 
 type IdType = string | null;
 type DrawerType = {
@@ -83,12 +84,15 @@ function Container({
 
   return createPortal(
     <>
-      <div
+      <Overlay
         className={cn(
-          "fixed left-0 right-0 top-0",
-          openId ? "overlay bottom-0" : "bg-transparent delay-500",
+          "z-auto",
+          openId
+            ? "overlay bottom-0"
+            : "bottom-[initial] bg-transparent delay-500",
         )}
       />
+
       <div
         ref={ref}
         className={cn(

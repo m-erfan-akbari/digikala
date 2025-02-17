@@ -9,7 +9,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { createPortal } from "react-dom";
+import Overlay from "./Overlay";
 
 type IdType = string | null;
 type UnderlinePositionType = {
@@ -139,10 +139,7 @@ function Container({
       >
         {children}
       </div>
-      {createPortal(
-        <div className="overlay fixed bottom-0 top-0 -z-10 w-screen" />,
-        document.body,
-      )}
+      <Overlay className="z-0" portal />
     </>
   );
 }
