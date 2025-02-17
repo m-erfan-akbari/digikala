@@ -18,7 +18,7 @@ const DynamicHeaderButtons = dynamic(() => import("./HeaderButtons"), {
 
 export default function MainHeader() {
   return (
-    <header className="sticky top-0">
+    <header className="sticky top-0 z-10">
       <div className="bg-white">
         <div className="container flex justify-between gap-2 py-3">
           <div className="flex grow items-center gap-6">
