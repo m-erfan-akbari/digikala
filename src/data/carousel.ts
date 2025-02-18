@@ -1,6 +1,6 @@
-import { sliderType } from "@/components/ui/Slider";
+import { carouselType } from "@/components/ui/Carousel";
 
-export const sampleSlides: sliderType[] = [
+export const sampleSlides: carouselType[] = [
   {
     href: "/",
     alt: "خرید طلا قسطی با دیجی‌پی",

@@ -1,14 +1,14 @@
 "use client";
 
-import classes from "./Slider.module.css";
+import classes from "./Carousel.module.css";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export type sliderType = { image: string; alt: string; href: string };
+export type carouselType = { image: string; alt: string; href: string };
 
-export default function Slider({ slides }: { slides: sliderType[] }) {
+export default function Carousel({ slides }: { slides: carouselType[] }) {
   const [slideIndex, setSlideIndex] = useState(0);
 
   // Create a ref to store the interval ID
@@ -112,12 +112,12 @@ export default function Slider({ slides }: { slides: sliderType[] }) {
         ))}
       </div>
 
-      <button className={cn("slider-side-btn", "left-6")} onClick={nextSlide}>
+      <button className={cn("carousel-side-btn", "left-6")} onClick={nextSlide}>
         <ChevronLeft />
       </button>
 
       <button
-        className={cn("slider-side-btn", "right-6")}
+        className={cn("carousel-side-btn", "right-6")}
         onClick={previousSlide}
       >
         <ChevronRight />

@@ -40,7 +40,7 @@ body {
     opacity: 0.8;
   }
 
-  .slider-side-btn {
+  .carousel-side-btn {
     @apply absolute top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-stone-200 p-2 text-stone-700 opacity-0 transition-opacity duration-200;
   }
 

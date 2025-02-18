@@ -1,11 +1,11 @@
-import { sampleSlides } from "@/data/slider";
-import Slider from "@/components/ui/Slider";
+import { sampleSlides } from "@/data/carousel";
+import Carousel from "@/components/ui/Carousel";
 import Services from "@/features/service/Services";
 
 export default function page() {
   return (
     <>
-      <Slider slides={sampleSlides} />
+      <Carousel slides={sampleSlides} />
       <Services />
     </>
   );
