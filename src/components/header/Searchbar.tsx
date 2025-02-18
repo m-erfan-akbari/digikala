@@ -26,7 +26,7 @@ export default function Searchbar() {
         </div>
         {isOpen ? (
           <div className="hidden lg:block">
-            <Overlay className="top-[118px]" />
+            <Overlay className="rigth-0 left-0 -z-10" />
             <div
               ref={ref}
               className="absolute left-0 right-0 top-0 rounded-lg border bg-white p-4 pt-3 shadow-md"
