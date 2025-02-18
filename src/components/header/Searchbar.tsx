@@ -6,10 +6,13 @@ import { useState } from "react";
 import SearchForm from "./SearchForm";
 import SearchbarContainer from "./SearchbarContainer";
 import Overlay from "../ui/Overlay";
+import { useBodyOverflow } from "@/hooks/useBodyOverflow";
 
 export default function Searchbar() {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useClickOutside<HTMLDivElement>(() => setIsOpen(false));
+
+  useBodyOverflow(isOpen);
 
   return (
     <Drawer>
