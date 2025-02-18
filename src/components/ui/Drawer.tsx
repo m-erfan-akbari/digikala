@@ -7,11 +7,11 @@ import {
   HTMLProps,
   ReactNode,
   useContext,
-  useEffect,
   useState,
 } from "react";
 import { createPortal } from "react-dom";
 import Overlay from "./Overlay";
+import { useBodyOverflow } from "@/hooks/useBodyOverflow";
 
 type IdType = string | null;
 type DrawerType = {
@@ -74,13 +74,7 @@ function Container({
   const { openId, close } = useContext(DrawerContext);
   const ref = useClickOutside<HTMLDivElement>(close);
 
-  useEffect(() => {
-    if (openId === id) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-  }, [openId, id]);
+  useBodyOverflow(openId === id);
 
   return createPortal(
     <>

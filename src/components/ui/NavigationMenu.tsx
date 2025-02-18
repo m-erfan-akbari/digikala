@@ -6,10 +6,10 @@ import {
   HTMLProps,
   MouseEvent,
   useContext,
-  useEffect,
   useState,
 } from "react";
 import Overlay from "./Overlay";
+import { useBodyOverflow } from "@/hooks/useBodyOverflow";
 
 type IdType = string | null;
 type UnderlinePositionType = {
@@ -116,13 +116,7 @@ function Container({
 }: HTMLProps<HTMLDivElement>) {
   const { openId, handleChange } = useContext(MenuContext);
 
-  useEffect(() => {
-    if (openId === id) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-  }, [openId, id]);
+  useBodyOverflow(openId === id);
 
   if (openId !== id) return null;
 

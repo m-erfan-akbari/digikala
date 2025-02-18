@@ -5,13 +5,13 @@ import {
   HTMLProps,
   ReactNode,
   useContext,
-  useEffect,
   useState,
 } from "react";
 import Overlay from "./Overlay";
 import { cn } from "@/lib/utils";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { ArrowRight, X } from "lucide-react";
+import { useBodyOverflow } from "@/hooks/useBodyOverflow";
 
 type IdType = string | null;
 
@@ -74,13 +74,7 @@ function Container({
 
   const ref = useClickOutside<HTMLDivElement>(handleChange);
 
-  useEffect(() => {
-    if (openId) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-  }, [openId]);
+  useBodyOverflow(Boolean(openId));
 
   return (
     <div
