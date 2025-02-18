@@ -22,7 +22,7 @@ export default function HeaderNavigation() {
           classes.animated,
         )}
       >
-        <div className="container-layout relative flex items-center justify-between">
+        <div className="container-layout relative flex items-center justify-between px-4">
           <NavigationMenu className="hidden text-sm lg:block">
             <NavigationMenu.Trigger
               id="categories-nav"
