@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import { Vazirmatn } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "../components/provider/AuthProvider";
-
-const vazir = Vazirmatn({
-  variable: "--font-vazir",
-  subsets: ["arabic", "latin"],
-});
+import { vazir } from "./font/font";
 
 export const metadata: Metadata = {
   title: "فروشگاه اینترنتی دیجی‌کالا",
@@ -22,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body
-        className={`${vazir.variable} antialiased`}
+        className={`${vazir.className} antialiased`}
         suppressHydrationWarning
       >
         <AuthProvider>{children}</AuthProvider>
