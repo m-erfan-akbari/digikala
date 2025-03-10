@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "www.digikala.com",
         pathname: "/statics/**",
       },
+      {
+        protocol: "https",
+        hostname: "dkstatics-public.digikala.com",
+        pathname: "/**",
+      },
     ],
   },
 };
