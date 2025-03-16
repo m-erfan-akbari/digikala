@@ -34,7 +34,7 @@ export default function BottomNavigation() {
       className="fixed bottom-0 left-0 right-0 border-t border-t-stone-300 lg:hidden"
       style={{ boxShadow: "0 0 2px 0 #ddd" }}
     >
-      <ul className="flex justify-evenly py-2 text-stone-600">
+      <ul className="flex justify-evenly bg-white py-2 text-stone-600">
         {bottomNavigations.map((item) => (
           <BottomNavigationItem
             key={item.href}
