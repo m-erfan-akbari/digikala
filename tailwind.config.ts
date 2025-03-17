@@ -7,6 +7,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "fresh-700": "var(--color-fresh-700)",
       },
       fontFamily: {
         vazir: ["var(--font-vazir)"],

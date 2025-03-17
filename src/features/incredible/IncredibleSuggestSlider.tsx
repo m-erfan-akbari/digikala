@@ -1,13 +1,13 @@
 import Slider from "@/components/ui/Slider";
 import React from "react";
-import { IncredibleOffer } from ".";
+import { IncredibleOfferType } from ".";
 import IncredibleSliderItem from "./IncredibleSliderItemI";
 import { ArrowLeft } from "lucide-react";
 
 export default function IncredibleSuggestSlider({
   incredible,
 }: {
-  incredible: IncredibleOffer;
+  incredible: IncredibleOfferType;
 }) {
   if (!incredible) {
     return (

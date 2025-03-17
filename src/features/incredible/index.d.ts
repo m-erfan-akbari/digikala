@@ -191,7 +191,7 @@ type Variant = {
   }[];
 };
 
-export type IncredibleOffer = {
+export type IncredibleOfferType = {
   title: string; // e.g., "پیشنهاد شگفت انگیز"
   discount_percent: number;
   see_more_url: {
@@ -203,4 +203,20 @@ export type IncredibleOffer = {
   icon: null | string;
   products_count: number;
   data_layer: null | unknown;
+};
+
+type SeeMoreUrl = {
+  base: string | null;
+  uri: string;
+};
+
+export type FreshIncredibleOfferType = {
+  title: string;
+  discount_percent: number;
+  see_more_url: SeeMoreUrl;
+  products: Product[];
+  background: string | null;
+  icon: string | null;
+  products_count: number;
+  data_layer: null;
 };

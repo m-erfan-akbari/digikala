@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-fresh-700: #029a49;
 }
 
 *:focus-visible {
