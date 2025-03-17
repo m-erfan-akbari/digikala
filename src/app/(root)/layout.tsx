@@ -9,7 +9,7 @@ export default function layout({ children }: PropsType) {
   return (
     <>
       <MainHeader />
-      <main className="flex flex-col gap-y-4">{children}</main>
+      <main className="flex flex-col gap-y-4 pb-16 lg:pb-4">{children}</main>
     </>
   );
 }
