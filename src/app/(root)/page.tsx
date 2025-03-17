@@ -11,6 +11,7 @@ import type { Banner } from "@/features/banner";
 import FreshIncredibleOffer from "@/features/incredible/FreshIncredibleOffer";
 import MainCategoriesGrid from "@/features/category/MainCategoriesGrid";
 import type { MainCategoriesDataType } from "@/features/category";
+import BannerHomeMiddle from "@/features/banner/BannerHomeMiddle";
 
 type Widget = {
   type: string;
@@ -51,6 +52,10 @@ export default async function page() {
     (w) => w.name === "main_categories_grid",
   );
 
+  const bannerHomeMiddleData = widgets?.find(
+    (w) => w.name === "banners_home_web_zone_middle",
+  );
+
   return (
     <>
       <Carousel slides={sampleCarouselSlides} />
@@ -68,6 +73,8 @@ export default async function page() {
       <MainCategoriesGrid
         data={mainCategoriesGrid?.data as MainCategoriesDataType}
       />
+
+      <BannerHomeMiddle data={bannerHomeMiddleData?.data as Banner[]} />
     </>
   );
 }
