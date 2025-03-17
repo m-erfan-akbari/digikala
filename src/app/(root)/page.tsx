@@ -1,8 +1,16 @@
 import { sampleSlides as sampleCarouselSlides } from "@/data/carousel";
 import Carousel from "@/components/ui/Carousel";
 import Services from "@/features/service/Services";
-import { IncredibleOffer } from "@/features/incredible";
+import type {
+  FreshIncredibleOfferType,
+  IncredibleOfferType,
+} from "@/features/incredible";
 import IncredibleSuggestSlider from "@/features/incredible/IncredibleSuggestSlider";
+import BannerHomeTop from "@/features/banner/BannerHomeTop";
+import type { Banner } from "@/features/banner";
+import FreshIncredibleOffer from "@/features/incredible/FreshIncredibleOffer";
+import MainCategoriesGrid from "@/features/category/MainCategoriesGrid";
+import type { MainCategoriesDataType } from "@/features/category";
 
 type Widget = {
   type: string;
@@ -25,9 +33,22 @@ export default async function page() {
     },
   });
   const data = (await res.json()) as ApiResponse;
+  const widgets = data?.data?.widgets;
 
-  const incredible = data?.data?.widgets?.find(
+  const incredible = widgets?.find(
     (w) => w.name === "incredible_offer_products_cart",
+  );
+
+  const bannerHomeTopData = widgets?.find(
+    (w) => w.name === "banners_home_web_zone_top",
+  );
+
+  const freshIncredibleOffer = widgets?.find(
+    (w) => w.name === "fresh_incredible_offer_products_circle",
+  );
+
+  const mainCategoriesGrid = widgets?.find(
+    (w) => w.name === "main_categories_grid",
   );
 
   return (
@@ -35,7 +56,17 @@ export default async function page() {
       <Carousel slides={sampleCarouselSlides} />
       <Services />
       <IncredibleSuggestSlider
-        incredible={incredible?.data as IncredibleOffer}
+        incredible={incredible?.data as IncredibleOfferType}
+      />
+
+      <BannerHomeTop data={bannerHomeTopData?.data as Banner[]} />
+
+      <FreshIncredibleOffer
+        data={freshIncredibleOffer?.data as FreshIncredibleOfferType}
+      />
+
+      <MainCategoriesGrid
+        data={mainCategoriesGrid?.data as MainCategoriesDataType}
       />
     </>
   );
