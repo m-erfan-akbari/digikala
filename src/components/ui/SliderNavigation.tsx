@@ -1,11 +1,17 @@
+"use client";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { RefObject, useEffect, useState } from "react";
 import NavigationButton from "./SliderNavigationButton";
 
 export default function SliderNavigation({
   ref,
+  scrollValue = 200,
+  distanceToShowButton = 20,
 }: {
   ref: RefObject<HTMLDivElement | null>;
+  scrollValue?: number;
+  distanceToShowButton?: number;
 }) {
   const [buttonsVisibility, setButtonsVisibility] = useState({
     left: true,
@@ -24,9 +30,6 @@ export default function SliderNavigation({
       }
     };
   }, [ref]);
-
-  const distanceToShowButton = 20;
-  const scrollValue = 200;
 
   function checkButtonsVisiblity(e: Event) {
     const target = e.currentTarget as HTMLDivElement;

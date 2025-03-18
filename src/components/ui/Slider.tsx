@@ -1,14 +1,19 @@
 "use client";
 
-import SliderHeader from "./SliderHeader";
-import { MouseEvent, ReactNode, useRef, useState } from "react";
-import SliderNavigation from "./SliderNavigation";
+import { cn } from "@/lib/utils";
+import { HTMLProps, MouseEvent, RefObject, useState } from "react";
 
-export default function Slider({ children }: { children: ReactNode }) {
+export default function Slider({
+  ref,
+  style,
+  children,
+  className,
+  ...props
+}: HTMLProps<HTMLDivElement> & {
+  ref: RefObject<HTMLDivElement | null>;
+}) {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-
-  const ref = useRef<HTMLDivElement>(null);
 
   function handleMouseDown(e: MouseEvent) {
     if (e.button === 0) {
@@ -35,22 +40,16 @@ export default function Slider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <section className="container">
-      <div className="relative rounded-2xl bg-red-500 py-4">
-        <div
-          className="flex overflow-x-hidden px-4 transition-all"
-          ref={ref}
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
-          onMouseMove={handleMouseMove}
-          style={{ userSelect: "none" }}
-        >
-          <SliderHeader />
-          <SliderNavigation ref={ref} />
-
-          <div className="flex gap-1 transition-all">{children}</div>
-        </div>
-      </div>
-    </section>
+    <div
+      ref={ref}
+      style={{ userSelect: "none", ...style }}
+      className={cn("flex overflow-x-hidden px-4 transition-all", className)}
+      {...props}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
+    >
+      {children}
+    </div>
   );
 }

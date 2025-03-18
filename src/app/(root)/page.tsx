@@ -5,7 +5,7 @@ import type {
   FreshIncredibleOfferType,
   IncredibleOfferType,
 } from "@/features/incredible";
-import IncredibleSuggestSlider from "@/features/incredible/IncredibleSuggestSlider";
+import IncredibleOfferSlider from "@/features/incredible/IncredibleOfferSlider";
 import BannerHomeTop from "@/features/banner/BannerHomeTop";
 import type { Banner } from "@/features/banner";
 import FreshIncredibleOffer from "@/features/incredible/FreshIncredibleOffer";
@@ -60,7 +60,7 @@ export default async function page() {
     <>
       <Carousel slides={sampleCarouselSlides} />
       <Services />
-      <IncredibleSuggestSlider
+      <IncredibleOfferSlider
         incredible={incredible?.data as IncredibleOfferType}
       />
 

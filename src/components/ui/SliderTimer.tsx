@@ -1,3 +1,5 @@
+"use client";
+
 import { convertToTwoDigitFormat, getTimeUntilMidnight } from "@/lib/time";
 import { useEffect, useState } from "react";
 import TimeUnitDisplay from "./TimeUnitDisplay";
