@@ -1,17 +1,18 @@
 import { sampleSlides as sampleCarouselSlides } from "@/data/carousel";
 import Carousel from "@/components/ui/Carousel";
 import Services from "@/features/service/Services";
+import IncredibleOfferSlider from "@/features/incredible/IncredibleOfferSlider";
+import BannerHomeTop from "@/features/banner/BannerHomeTop";
+import FreshIncredibleOffer from "@/features/incredible/FreshIncredibleOffer";
+import MainCategoriesGrid from "@/features/category/MainCategoriesGrid";
+import BannerHomeMiddle from "@/features/banner/BannerHomeMiddle";
+
 import type {
   FreshIncredibleOfferType,
   IncredibleOfferType,
 } from "@/features/incredible";
-import IncredibleOfferSlider from "@/features/incredible/IncredibleOfferSlider";
-import BannerHomeTop from "@/features/banner/BannerHomeTop";
-import type { Banner } from "@/features/banner";
-import FreshIncredibleOffer from "@/features/incredible/FreshIncredibleOffer";
-import MainCategoriesGrid from "@/features/category/MainCategoriesGrid";
+import type { BannerType } from "@/features/banner";
 import type { MainCategoriesDataType } from "@/features/category";
-import BannerHomeMiddle from "@/features/banner/BannerHomeMiddle";
 
 type Widget = {
   type: string;
@@ -64,7 +65,7 @@ export default async function page() {
         incredible={incredible?.data as IncredibleOfferType}
       />
 
-      <BannerHomeTop data={bannerHomeTopData?.data as Banner[]} />
+      <BannerHomeTop data={bannerHomeTopData?.data as BannerType[]} />
 
       <FreshIncredibleOffer
         data={freshIncredibleOffer?.data as FreshIncredibleOfferType}
@@ -74,7 +75,7 @@ export default async function page() {
         data={mainCategoriesGrid?.data as MainCategoriesDataType}
       />
 
-      <BannerHomeMiddle data={bannerHomeMiddleData?.data as Banner[]} />
+      <BannerHomeMiddle data={bannerHomeMiddleData?.data as BannerType[]} />
     </>
   );
 }

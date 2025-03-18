@@ -1,4 +1,4 @@
-export type Banner = {
+export type BannerType = {
   id: number;
   image: string;
   webp_image: string;

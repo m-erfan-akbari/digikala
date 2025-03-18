@@ -1,7 +1,7 @@
 import Image from "next/image";
-import type { Banner } from "./index";
+import type { BannerType } from "./index";
 
-export default function BannerHomeMiddle({ data }: { data: Banner[] }) {
+export default function BannerHomeMiddle({ data }: { data: BannerType[] }) {
   if (!data) return <></>;
 
   return (

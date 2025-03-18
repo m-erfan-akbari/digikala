@@ -2,8 +2,8 @@
 
 import Slider from "@/components/ui/Slider";
 import { useRef } from "react";
-import { IncredibleOfferType } from ".";
-import IncredibleSliderItem from "./IncredibleSliderItemI";
+import type { IncredibleOfferType } from "./index";
+import IncredibleSliderItem from "./IncredibleSliderItem";
 import { ArrowLeft } from "lucide-react";
 import SliderHeader from "@/components/ui/SliderHeader";
 import SliderNavigation from "@/components/ui/SliderNavigation";

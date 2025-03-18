@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Banner } from "./index";
+import type { BannerType } from "./index";
 
-export default function BannerHomeTop({ data }: { data: Banner[] }) {
+export default function BannerHomeTop({ data }: { data: BannerType[] }) {
   if (!data) return null;
   return (
     <section className="container flex flex-wrap justify-between gap-4">

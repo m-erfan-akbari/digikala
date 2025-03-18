@@ -1,5 +1,5 @@
 import { ArrowLeft } from "lucide-react";
-import type { FreshIncredibleOfferType } from ".";
+import type { FreshIncredibleOfferType } from "./index";
 import FreshIncredibleOfferItem from "./FreshIncredibleOfferItem";
 
 export default function FreshOfferProductList({
@@ -12,7 +12,7 @@ export default function FreshOfferProductList({
       {data.products.map((prc) => (
         <FreshIncredibleOfferItem key={prc.id} product={prc} />
       ))}
-      <span className="text-fresh-700 flex items-center rounded-full bg-white px-4 py-3">
+      <span className="flex items-center rounded-full bg-white px-4 py-3 text-fresh-700">
         بیش از 100 کالا <ArrowLeft className="h-5 w-5" />
       </span>
     </div>
