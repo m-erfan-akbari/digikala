@@ -24,7 +24,7 @@ export default function NotFound() {
               src="https://www.digikala.com/statics/img/png/page-not-found.webp"
               alt="تصویر صفحه یافت نشده"
               fill
-              objectFit="contain"
+              className="object-contain"
             />
           </div>
         </section>

@@ -13,7 +13,12 @@ export default function BannerHomeMiddle({ data }: { data: BannerType[] }) {
             className="relative grow overflow-hidden rounded-xl"
             style={{ aspectRatio: "25 / 10" }}
           >
-            <Image src={banner.webp_image} alt={`تصویر ${banner.title}`} fill />
+            <Image
+              src={banner.webp_image}
+              alt={`تصویر ${banner.title}`}
+              fill
+              sizes="100%"
+            />
           </div>
         ))}
       </div>
