@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { ProductType } from "../incredible";
+import type { productType } from "../product";
 
 export default function CategorizedProductCard({
   product,
 }: {
-  product: ProductType;
+  product: productType;
 }) {
   return (
     <div className="bg-white p-2" key={product.id}>

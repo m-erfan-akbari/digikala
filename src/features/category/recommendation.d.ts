@@ -1,4 +1,4 @@
-import { ProductType } from "../incredible";
+import type { productType } from "../product";
 
 type urlType = {
   base: null;
@@ -9,7 +9,7 @@ export type categoryGridType = {
   code: string;
   title: string;
   description: string;
-  products: ProductType[];
+  products: productType[];
   url: urlType;
 };
 

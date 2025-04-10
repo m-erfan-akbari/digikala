@@ -1,11 +1,11 @@
 import Image from "next/image";
-import type { ProductType } from "./index";
+import type { productType } from "../product";
 import Badge from "@/components/ui/Badge";
 
 export default function FreshIncredibleOfferItem({
   product,
 }: {
-  product: ProductType;
+  product: productType;
 }) {
   const image = product?.images?.main?.url?.at(0) || "";
   const title = product?.title_fa;

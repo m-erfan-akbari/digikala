@@ -1,9 +1,9 @@
 import Badge from "@/components/ui/Badge";
 import Image from "next/image";
-import type { ProductType } from "./index";
+import type { productType } from "../product";
 import { formatNumberWithCommas } from "@/lib/number";
 
-export default function IncredibleSliderItem({ prc }: { prc: ProductType }) {
+export default function IncredibleSliderItem({ prc }: { prc: productType }) {
   const title = prc.title_fa;
   const image = prc.images.main.url.at(0)!;
   const status = prc.status;
