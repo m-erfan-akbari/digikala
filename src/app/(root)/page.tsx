@@ -13,6 +13,10 @@ import type {
 } from "@/features/incredible";
 import type { BannerType } from "@/features/banner";
 import type { MainCategoriesDataType } from "@/features/category";
+import PopularBrandsGrid from "@/features/brand/PopularBrandsGrid";
+import { BrandsDataType } from "@/features/brand";
+import HomeCategoryRecommendationsFirst from "@/features/category/HomeCategoryRecommendationsFirst";
+import HomeCategoryRecommendationsSecond from "@/features/category/HomeCategoryRecommendationsSecond";
 
 type Widget = {
   type: string;
@@ -57,6 +61,10 @@ export default async function page() {
     (w) => w.name === "banners_home_web_zone_middle",
   );
 
+  const popularBrands = widgets?.find(
+    (w) => w.name === "popular_brands_horizontal",
+  );
+
   return (
     <>
       <Carousel slides={sampleCarouselSlides} />
@@ -76,6 +84,12 @@ export default async function page() {
       />
 
       <BannerHomeMiddle data={bannerHomeMiddleData?.data as BannerType[]} />
+
+      <PopularBrandsGrid data={popularBrands?.data as BrandsDataType} />
+
+      <HomeCategoryRecommendationsFirst />
+
+      <HomeCategoryRecommendationsSecond />
     </>
   );
 }
