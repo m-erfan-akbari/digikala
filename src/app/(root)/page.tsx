@@ -17,6 +17,8 @@ import PopularBrandsGrid from "@/features/brand/PopularBrandsGrid";
 import { BrandsDataType } from "@/features/brand";
 import HomeCategoryRecommendationsFirst from "@/features/category/HomeCategoryRecommendationsFirst";
 import HomeCategoryRecommendationsSecond from "@/features/category/HomeCategoryRecommendationsSecond";
+import TopProducts from "@/features/product/TopProducts";
+import type { orderedProductsType } from "@/features/product";
 
 type Widget = {
   type: string;
@@ -65,6 +67,10 @@ export default async function page() {
     (w) => w.name === "popular_brands_horizontal",
   );
 
+  const bestSellingProducts = widgets?.find(
+    (w) => w.name === "best_selling_products_ordered",
+  );
+
   return (
     <>
       <Carousel slides={sampleCarouselSlides} />
@@ -88,6 +94,8 @@ export default async function page() {
       <PopularBrandsGrid data={popularBrands?.data as BrandsDataType} />
 
       <HomeCategoryRecommendationsFirst />
+
+      <TopProducts data={bestSellingProducts?.data as orderedProductsType} />
 
       <HomeCategoryRecommendationsSecond />
     </>
