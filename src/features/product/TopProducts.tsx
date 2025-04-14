@@ -36,12 +36,11 @@ export default function TopProducts({ data }: { data: orderedProductsType }) {
 
           <div className="flex gap-4">
             {chunkedProducts.map((productGroup, groupIndex) => (
-              <div key={groupIndex} className="flex flex-col gap-2">
-                <TopProductChunk
-                  productGroup={productGroup}
-                  groupIndex={groupIndex}
-                />
-              </div>
+              <TopProductChunk
+                key={groupIndex}
+                productGroup={productGroup}
+                groupIndex={groupIndex}
+              />
             ))}
           </div>
         </Slider>
