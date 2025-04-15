@@ -4,11 +4,12 @@ import { cn } from "@/lib/utils";
 import { LoginLink } from "@kinde-oss/kinde-auth-nextjs";
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, ElementType } from "react";
 
-type VariantType = "primary" | "outline";
+type VariantType = "primary" | "outline" | "light";
 
 type CommonProps = {
   as?: ElementType;
   variant?: VariantType;
+  disabled?: boolean;
 };
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & CommonProps;
@@ -16,8 +17,9 @@ type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & CommonProps;
 
 const baseStyles = "py-2 px-4 rounded-lg";
 const variants = {
-  primary: "",
+  primary: "bg-red-500 text-white",
   outline: "bg-transparent border",
+  light: "bg-stone-300 text-stone-800",
 };
 
 function BaseButton({
@@ -25,11 +27,18 @@ function BaseButton({
   variant = "primary",
   className,
   children,
+  disabled = false,
   ...props
 }: CommonProps & (ButtonProps | AnchorProps)) {
   return (
     <Component
-      className={cn(baseStyles, variants[variant], className)}
+      className={cn(
+        baseStyles,
+        variants[variant],
+        disabled && "bg-stone-300 text-stone-500",
+        className,
+      )}
+      disabled={disabled}
       {...props}
     >
       {children}
