@@ -17,7 +17,7 @@ export default function IncredibleSliderItem({ prc }: { prc: productType }) {
 
   return (
     <div
-      className="grid w-40 shrink-0 cursor-pointer gap-x-1 bg-white p-2 text-sm text-stone-500 first:rounded-r-md last:rounded-l-md"
+      className="grid w-40 shrink-0 cursor-pointer gap-x-1 bg-white p-2 text-sm text-stone-500 first:rounded-r-md"
       style={{
         gridTemplateColumns: "auto 1fr auto",
       }}

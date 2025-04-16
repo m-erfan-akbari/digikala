@@ -7,6 +7,7 @@ import IncredibleSliderItem from "./IncredibleSliderItem";
 import { ArrowLeft } from "lucide-react";
 import SliderHeader from "@/components/ui/SliderHeader";
 import SliderNavigation from "@/components/ui/SliderNavigation";
+import Link from "next/link";
 
 export default function IncredibleOfferSlider({
   incredible,
@@ -32,11 +33,14 @@ export default function IncredibleOfferSlider({
             {incredible.products.map((prc) => (
               <IncredibleSliderItem key={prc.id} prc={prc} />
             ))}
-          </div>
 
-          <div className="flex w-40 cursor-pointer flex-col items-center justify-center gap-4 rounded-l-md bg-white text-stone-600">
-            <ArrowLeft className="h-12 w-12 rounded-full border-2 border-cyan-500 p-2 text-cyan-500" />
-            <span>مشاهده همه</span>
+            <Link
+              href={"/"}
+              className="flex w-40 cursor-pointer flex-col items-center justify-center gap-4 rounded-l-md bg-white text-stone-600"
+            >
+              <ArrowLeft className="h-12 w-12 rounded-full border-2 border-cyan-500 p-2 text-cyan-500" />
+              <span>مشاهده همه</span>
+            </Link>
           </div>
         </Slider>
       </div>
