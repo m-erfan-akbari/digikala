@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Digikala Desktop Homepage Clone
 
-## Getting Started
+This project is a desktop-only clone of Digikala's homepage, built using Next.js. The focus was on replicating the layout and structure through fully custom components — without relying on any third-party UI libraries.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Custom-built components without using pre-made UI kits (e.g. MUI, Bootstrap)
+- Tailwind CSS used for rapid development and precise control over styling
+- Designed exclusively for desktop view (not responsive)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Preview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can view a live demo of the project here:  
+👉 http://digikala.runflare.run/
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Notes
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- This project was created as a personal front-end practice.
+- The design and branding elements belong to Digikala and are used here for educational purposes only.
