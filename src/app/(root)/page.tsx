@@ -36,10 +36,9 @@ type ApiResponse = {
 
 export default async function page() {
   const res = await fetch("https://api.digikala.com/v2/", {
-    next: {
-      revalidate: 60, // Re-fetch and update the data every 60 seconds to ensure it stays up-to-date.
-    },
+    cache: "no-cache",
   });
+
   const data = (await res.json()) as ApiResponse;
   const widgets = data?.data?.widgets;
 
