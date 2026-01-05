@@ -9,7 +9,7 @@ export default function IncredibleSliderItem({ prc }: { prc: productType }) {
   const status = prc.status;
 
   const { discount_percent, selling_price, rrp_price } = prc.default_variant
-    .price || {
+    ?.price || {
     discount_percent: 0,
     selling_price: 0,
     rrp_price: 0,
